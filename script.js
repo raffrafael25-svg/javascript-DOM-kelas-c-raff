@@ -27,11 +27,14 @@ function perbaruiStatistik() {
 function tambahTugas() {
     const teksTugas = inputTugas.value.trim();
 
-    // Validasi: Tampilkan alert jika input kosong (Sesuai Ketentuan Tugas)
+    // Validasi: Tampilkan alert jika input kosong
     if (teksTugas === "") {
         alert("Catatan Anda tidak boleh kosong");
         return;
     }
+
+    // Mencetak riwayat penambahan ke console
+    console.log("Tugas ditambah:", teksTugas);
 
     // A. Membuat Elemen Dinamis Baru (createElement)
     const li = document.createElement("li");
@@ -61,14 +64,14 @@ function tambahTugas() {
 
     // B. EVENT LISTENER PADA CHECKBOX (Menandai Selesai)
     checkbox.addEventListener("change", function () {
-        // Menggunakan classList.toggle untuk menambah/menghapus class 'selesai'
         li.classList.toggle("selesai");
+        console.log("Status tugas berubah:", spanTeks.innerText, "| Selesai:", checkbox.checked);
         perbaruiStatistik();
     });
 
     // C. EVENT LISTENER PADA TOMBOL HAPUS (remove())
     btnHapus.addEventListener("click", function () {
-        // Menghapus elemen li dari DOM
+        console.log("Tugas dihapus:", spanTeks.innerText);
         li.remove();
         perbaruiStatistik();
     });
@@ -96,30 +99,3 @@ inputTugas.addEventListener("keyup", function (event) {
         tambahTugas();
     }
 });
-
-// 5. Tambahkan console.log di dalam fungsi tambahTugas()
-function tambahTugas() {
-    const teksTugas = inputTugas.value.trim();
-
-    if (teksTugas === "") {
-        alert("Catatan Anda tidak boleh kosong");
-        return;
-    }
-
-    // Mencetak riwayat ke console
-    console.log("Tugas ditambah:", teksTugas);
-
-    // Di dalam event listener checkbox:
-    checkbox.addEventListener("change", function () {
-        li.classList.toggle("selesai");
-        console.log("Status tugas berubah:", spanTeks.innerText, "| Selesai:", checkbox.checked);
-        perbaruiStatistik();
-    });
-
-    // Di dalam event listener tombol hapus:
-    btnHapus.addEventListener("click", function () {
-        console.log("Tugas dihapus:", spanTeks.innerText);
-        li.remove();
-        perbaruiStatistik();
-    });
-}
