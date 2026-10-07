@@ -1,0 +1,241 @@
+/* =========================================================
+   STYLE.CSS - IT TO-DO LIST (NAVY & SILVER THEME)
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Fira Code', Consolas, sans-serif;
+}
+
+body {
+    background-color: #0a192f; /* Deep Navy Background */
+    color: #e2e8f0; /* Silver Light Text */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(30, 58, 138, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(148, 163, 184, 0.08) 0%, transparent 40%);
+}
+
+.container {
+    width: 100%;
+    max-width: 580px;
+    background-color: #112240; /* Card Navy */
+    border: 1px solid #233554;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7),
+                0 0 15px rgba(192, 192, 192, 0.05);
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #233554;
+    padding-bottom: 15px;
+}
+
+.tech-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-family: 'Fira Code', monospace;
+    color: #94a3b8; /* Metallic Silver Muted */
+    background: #1e293b;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #475569;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #f8fafc;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Form Input Section */
+.input-card {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#inputTugas {
+    flex: 1;
+    background-color: #0a192f;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#inputTugas:focus {
+    border-color: #cbd5e1; /* Silver Highlight */
+    box-shadow: 0 0 8px rgba(203, 213, 225, 0.3);
+}
+
+#inputTugas::placeholder {
+    color: #64748b;
+}
+
+#btnTambah {
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+    color: #f8fafc;
+    border: 1px solid #64748b;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#btnTambah:hover {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.2);
+}
+
+/* Stats Counter Section */
+.stats-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0a192f;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-label {
+    color: #94a3b8;
+}
+
+.stat-value {
+    color: #f8fafc;
+    font-weight: 700;
+    background-color: #1e293b;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+/* List Items Section */
+.list-container {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.list-container::-webkit-scrollbar {
+    width: 6px;
+}
+.list-container::-webkit-scrollbar-track {
+    background: #0a192f;
+}
+.list-container::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+}
+
+#daftarTugas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual Task Item (li) */
+#daftarTugas li {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+#daftarTugas li:hover {
+    border-color: #64748b;
+}
+
+/* Checkbox & Text Container */
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #64748b;
+}
+
+.task-text {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+/* Style saat Tugas Selesai (Class 'selesai') */
+.selesai .task-text {
+    text-decoration: line-through;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Tombol Hapus */
+.btn-hapus {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.btn-hapus:hover {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+}

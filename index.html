@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Task Manager | To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN untuk Icon (Opsional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Berorientasi TI -->
+        <header class="header">
+            <div class="tech-badge">&lt;/&gt; SYSTEM TASK MANAGER</div>
+            <h1>IT TASK MANAGER</h1>
+            <p>Aplikasi To-Do List Pemrograman Internet</p>
+        </header>
+
+        <!-- Form Input Tugas -->
+        <div class="input-card">
+            <div class="input-group">
+                <input type="text" id="inputTugas" placeholder="Ketikkan tugas/catatan baru..." autocomplete="off">
+                <button id="btnTambah">
+                    <i class="fa-solid fa-plus"></i> Tambah
+                </button>
+            </div>
+        </div>
+
+        <!-- Rekap Statistik Tugas -->
+        <div class="stats-card">
+            <div class="stat-item">
+                <span class="stat-label">Total:</span>
+                <span id="totalTugas" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Selesai:</span>
+                <span id="tugasSelesai" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Belum Selesai:</span>
+                <span id="tugasBelumSelesai" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <!-- Daftar Tugas -->
+        <div class="list-container">
+            <ul id="daftarTugas">
+                <!-- Item li akan ditambahkan secara dinamis lewat JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Script diletakkan di akhir sebelum body sesuai kaidah DOM & tips debugging -->
+    <script src="script.js"></script>
+</body>
+</html>
