@@ -96,3 +96,30 @@ inputTugas.addEventListener("keyup", function (event) {
         tambahTugas();
     }
 });
+
+// 5. Tambahkan console.log di dalam fungsi tambahTugas()
+function tambahTugas() {
+    const teksTugas = inputTugas.value.trim();
+
+    if (teksTugas === "") {
+        alert("Catatan Anda tidak boleh kosong");
+        return;
+    }
+
+    // Mencetak riwayat ke console
+    console.log("Tugas ditambah:", teksTugas);
+
+    // Di dalam event listener checkbox:
+    checkbox.addEventListener("change", function () {
+        li.classList.toggle("selesai");
+        console.log("Status tugas berubah:", spanTeks.innerText, "| Selesai:", checkbox.checked);
+        perbaruiStatistik();
+    });
+
+    // Di dalam event listener tombol hapus:
+    btnHapus.addEventListener("click", function () {
+        console.log("Tugas dihapus:", spanTeks.innerText);
+        li.remove();
+        perbaruiStatistik();
+    });
+}
